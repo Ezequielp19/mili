@@ -1,0 +1,66 @@
+ion-content {
+  --background: hsla(24, 100%, 1%, 0.966); /* Color de fondo gris claro */
+}
+
+.plan-pago-card {
+  margin: 20px auto;
+  width: 90%;
+  max-width: 500px;
+}
+
+.plan-pago-card-header {
+  background-color: #CFB53B;
+  color: white;
+}
+
+.plan-pago-card-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #ffffff; /* Aseguramos que el texto sea completamente blanco */
+}
+
+.plan-pago-card-content {
+  padding: 20px;
+}
+
+.pdf-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #CFB53B;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: center;
+  width: 100%; /* Ensure the link button takes full width */
+}
+
+.pdf-link:hover {
+  background-color: darken(#CFB53B, 10%);
+}
+
+.no-pdfs-card {
+  background-color: #f8d7da; /* Fondo rojo claro para el mensaje de no hay PDFs */
+  color: #721c24;             /* Color de texto rojo oscuro */
+}
+
+ion-grid {
+  height: 100%;
+}
+
+ion-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 576px) {
+  .plan-pago-card {
+    height: auto;
+    width: 100%;
+  }
+  .pdf-link {
+    padding: 5px 10px;
+  }
+}

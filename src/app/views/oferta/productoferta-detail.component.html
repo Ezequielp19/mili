@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" style="color: #1025df;"> <strong> Detalles del Producto en Oferta </strong> </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToCart()">
+        <ion-icon name="cart-outline" style="color: rgb(20, 7, 145); width: 40px; height: 40px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="productoferta" class="content">
+  <ion-card class="product-card">
+    <ion-card-header>
+      <img [src]="productoferta.imagen" [alt]="productoferta.nombre" class="product-image"/>
+    </ion-card-header>
+    <ion-card-content>
+      <h2 class="product-title"> <strong> {{ productoferta.nombre }}</strong></h2>
+      <p class="product-description"> <strong> {{ productoferta.descripcion }} </strong></p>
+      <p *ngIf="isLoggedIn"><strong>Precio Original:</strong> <del>${{ calculateOriginalPrice(productoferta.precioFinal, productoferta.descuento) }}</del></p>
+      <p *ngIf="isLoggedIn"><strong>Descuento:</strong> {{ productoferta.descuento }}%</p>
+      <p *ngIf="isLoggedIn"><strong>Precio Final:</strong> ${{ productoferta.precioFinal | number:'1.2-2' }}</p>
+      <p><strong>Codigo:</strong> {{ productoferta.codigo }}</p>
+      <p><strong>Categoría:</strong> {{ productoferta.categoria.nombre }}</p>
+      <p><strong>Marca:</strong> {{ productoferta.marca.nombre }}</p>
+      <ion-button expand="full" color="primary" (click)="addToCart(productoferta)" style="color: white;">Agregar 🛒</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-content *ngIf="!productoferta" class="content">
+  <ion-card class="no-product-card">
+    <ion-card-content>
+      <h2>Producto no encontrado</h2>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

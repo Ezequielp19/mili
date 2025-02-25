@@ -1,0 +1,150 @@
+// ion-content {
+
+//   --background: #34495E;
+//  /* Color de fondo gris claro */
+// }
+
+
+
+.certificacion-card {
+  margin: 10px auto; /* Reducir el margen superior e inferior */
+  padding: 15px;
+  width: 90%;
+  max-width: 500px;
+  overflow-y: auto;
+}
+
+ion-grid, ion-row {
+  height: auto; /* Permitir que la altura se ajuste al contenido */
+}
+
+.certificacion-card-header {
+  background-color: #CFB53B;
+  color: white;
+}
+
+.certificacion-card-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.certificacion-card-content {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pdf-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #CFB53B;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  text-align: center;
+  width: 100%; /* Ensure the link button takes full width */
+}
+
+.pdf-link:hover {
+  background-color: darken(#CFB53B, 10%);
+}
+
+ion-grid {
+  height: 100%;
+}
+
+ion-col {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center elements horizontally */
+  margin-bottom: 10px; /* Add bottom margin to separate rows */
+}
+
+.year-select-item {
+  width: 100%; /* Ensure the ion-item takes full width */
+}
+
+.year-select {
+  width: 100%; /* Adjust width of the select */
+}
+
+@media (max-width: 576px) {
+  .certificacion-card {
+    height: auto; /* Allow the card to grow vertically */
+    font-size: 1.5rem;
+  }
+  .pdf-link {
+    padding: 5px 10px;
+  }
+}
+
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.image-container {
+  width: 100%;
+  padding-top: 75%; /* 4:3 Aspect Ratio */
+  position: relative;
+  overflow: hidden;
+
+
+display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+// .image-container img {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 62%;
+//   height: 90%;
+//   object-fit: scale-down;
+// }
+
+.image-container img {
+  position: absolute;
+  top: 0;
+left: 0;
+margin-left: 70px;
+  width: 62%;
+ height: 90%;
+  object-fit: scale-down;
+}
+
+ion-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+ion-card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+ion-card-header {
+  text-align: center;
+}
+
+p {
+  margin: 5px 0;
+  text-align: center;
+}
+
+ion-button {
+  margin-top: 10px;
+}
+
+

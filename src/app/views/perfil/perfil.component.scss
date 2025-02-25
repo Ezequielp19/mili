@@ -1,0 +1,32 @@
+ion-content {
+  --background: hsla(24, 100%, 1%, 0.966); // Color de fondo gris claro
+}
+
+
+.profile-card {
+  margin: 20px auto;
+  width: 90%;  // Ajusta el ancho de la tarjeta para que sea responsivo
+  max-width: 500px; // Limita el ancho máximo de la tarjeta
+  border-radius: 10px;  // Bordes redondeados
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); // Sombra sutil
+}
+
+.profile-card-header {
+  background-color:  #CFB53B;
+  color: white;
+}
+
+.profile-card-content {
+  padding: 20px;
+}
+
+.label {
+  font-weight: bold;
+  min-width: 100px; // Establece un ancho mínimo para las etiquetas
+}
+
+ion-item {
+  --background: transparent; // Fondo transparente para que se vea el color de la tarjeta
+  --inner-padding-end: 0;    // Elimina el padding derecho interno de ion-item
+  --border-color: transparent; // Elimina el borde de ion-item
+}

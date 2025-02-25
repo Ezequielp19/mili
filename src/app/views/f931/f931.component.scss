@@ -1,0 +1,93 @@
+// ion-content {
+
+//   --background: #34495E;
+//  /* Color de fondo gris claro */
+// }
+
+ion-card {
+  width: 100%;
+  max-width: 180px; /* Adjust this value as needed */
+  height: 100%; /* Ajustar la altura de todas las tarjetas al 100% de la fila */
+  display: flex; /* Usar flexbox para alinear el contenido verticalmente */
+  flex-direction: column;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  ion-card img {
+  max-width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+  ion-card-content {
+    text-align: center;
+    padding: 10px;
+
+    h2 {
+      font-size: 1rem; /* Smaller font size */
+      margin: 5px 0; /* Reduce margins */
+    }
+
+    p {
+      font-size: 0.875rem; /* Smaller font size */
+      margin: 2px 0; /* Reduce margins */
+    }
+
+    ion-button {
+      font-size: 0.875rem; /* Smaller font size */
+      padding: 6px 12px; /* Reduce padding */
+    }
+  }
+
+.show-details {
+  display: block;
+}
+
+.product-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+
+
+ion-title {
+  color: white; /* Color blanco para el título */
+}
+
+ion-button {
+  --color: white; /* Color blanco para el texto del botón */
+}
+
+ion-icon {
+  color: white; /* Color blanco para los iconos */
+}
+
+.pagination-buttons ion-button {
+  --color: var(--ion-color-primary);
+  --background: white; /* Fondo blanco para los botones de paginación */
+  color: var(--ion-color-primary); /* Texto del color principal */
+}
+
+ion-card ion-button {
+  --background: white; /* Fondo blanco para los botones de la tarjeta */
+  --color: var(--ion-color-primary); /* Texto del color principal */
+}
+
+
+ion-icon {
+  color: white;
+  font-size: 24px; /* Ajusta el tamaño del ícono según sea necesario */
+}
+
+
+}

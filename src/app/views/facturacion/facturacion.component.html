@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Facturación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div *ngIf="(facturacionDocs$ | async) === null" class="ion-text-center ion-padding">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Cargando facturas...</p>
+  </div>
+
+  <ion-grid fixed *ngIf="facturacionDocs$ | async as facturacionDocs">
+    <ion-row *ngIf="facturacionDocs.length > 0">
+      <ion-col size="12" size-md="6" *ngFor="let doc of facturacionDocs">
+        <ion-card *ngIf="doc.facturas" class="facturacion-card">
+          <ion-card-header class="facturacion-card-header">
+            <ion-card-title class="facturacion-card-title">Factura: {{ doc.facturas }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="facturacion-card-content">
+            <div *ngIf="doc.pdf && doc.pdf !== ''">
+              <a [href]="getSanitizedUrl(doc.pdf)" target="_blank" rel="noopener noreferrer" class="pdf-link">Abrir PDF</a>
+            </div>
+            <div *ngIf="!doc.pdf || doc.pdf === ''">
+              <p>No hay PDF disponible.</p>
+            </div>
+          </ion-card-content>
+        </ion-card>
+        <!-- <div *ngIf="!doc.facturas">
+          <p>Factura sin datos</p>
+        </div> -->
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="facturacionDocs.length === 0">
+      <ion-col>
+        <p>No se encontraron facturas.</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

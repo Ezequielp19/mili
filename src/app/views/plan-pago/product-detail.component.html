@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" style="color: #1025df;">  <strong> Detalles del Producto </strong> </ion-title>
+     <ion-buttons slot="end">
+      <ion-button (click)="goToCart()">
+        <ion-icon name="cart-outline" style="color: rgb(20, 7, 145);  width: 40px; height: 40px; "></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<!-- Spinner de carga mientras se obtiene el producto -->
+<ion-content *ngIf="isLoading" class="content">
+  <div class="loading-spinner">
+    <ion-spinner name="crescent"></ion-spinner>
+  </div>
+</ion-content>
+
+
+<ion-content *ngIf="producto" class="content">
+  <ion-card class="product-card">
+    <ion-card-header>
+      <img [src]="producto.imagen" [alt]="producto.nombre" class="product-image"/>
+    </ion-card-header>
+    <ion-card-content>
+      <h2 class="product-title"> <strong>  {{ producto.nombre }}</strong></h2>
+      <p class="product-description">  <strong> {{ producto.descripcion }} </strong></p>
+      <!-- <p><strong>Precio Final:</strong> ${{ producto.precioFinal | number:'1.2-2' }}</p> -->
+
+ <p *ngIf="isLoggedIn">
+        <strong>Precio Final:</strong> ${{ producto.precioFinal | number:'1.2-2' }}
+      </p>
+
+      <p><strong>Codigo:</strong> {{ producto.codigo  }}</p>
+      <p><strong>Categoría:</strong> {{ producto.categoria.nombre }}</p>
+      <p><strong>Marca:</strong> {{ producto.marca.nombre }}</p>
+
+
+       <div style="display: flex; justify-content: space-between; align-items: center;">
+      <ion-button size="small" (click)="decreaseQuantity()">-</ion-button>
+      <ion-input [(ngModel)]="cantidad" min="1" max="10" style="width: 40px; text-align: center; background-color: white;"></ion-input>
+      <ion-button size="small" (click)="increaseQuantity()">+</ion-button>
+    </div>
+
+
+
+      <ion-button expand="full" color="primary" (click)="addToCart(producto)"  style="color: white;">Agregar 🛒</ion-button>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>
+
+<!-- <ion-content *ngIf="!producto" class="content">
+  <ion-card class="no-product-card">
+    <ion-card-content>
+      <h2>Producto no encontrado</h2>
+    </ion-card-content>
+  </ion-card>
+</ion-content> -->

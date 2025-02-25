@@ -1,0 +1,36 @@
+/* Los mismos estilos que en login.component.scss */
+ion-card {
+  margin: 20px auto;
+  max-width: 400px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+ion-card-header {
+  background-color: #5b7daf; 
+  padding: 20px;
+}
+
+ion-card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+ion-item {
+  margin-bottom: 10px;
+}
+
+.register-button {  /* Cambiamos el nombre de la clase a register-button */
+  margin-top: 20px;
+  background-color: var(--ion-color-primary);
+  color: white;
+  text-transform: uppercase;
+}
+
+.login-link { /* Cambiamos el nombre de la clase a login-link */
+  margin-top: 15px;
+
+  a {
+    color: var(--ion-color-primary);
+    text-decoration: none;
+  }
+}

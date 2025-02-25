@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Registrarse</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">Crear Cuenta</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+       <form #registerForm="ngForm" (ngSubmit)="register(registerForm.value)">
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input type="text" name="nombre" [(ngModel)]="user.nombre" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Apellido</ion-label>
+          <ion-input type="text" name="apellido" [(ngModel)]="user.apellido" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Correo Electrónico</ion-label>
+          <ion-input type="email" name="email" [(ngModel)]="user.email" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" name="password" [(ngModel)]="user.password" required></ion-input>
+        </ion-item>
+
+        <ion-button
+          expand="full"
+          type="submit"
+          [disabled]="!registerForm.form.valid"
+          class="register-button">
+          Registrarse
+        </ion-button>
+      </form>
+
+      <p class="ion-text-center login-link" (click)="navigateToLogin()">
+        ¿Ya tienes cuenta? Iniciar Sesión
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

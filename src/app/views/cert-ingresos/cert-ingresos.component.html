@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" style="color: #ffffff;">Categorías</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let categoria of categorias" (click)="onCategoriaClick(categoria.id)">
+      {{ categoria.nombre }}
+    </ion-item>
+  </ion-list>
+
+  <!-- Sección de Productos de la Categoría Seleccionada -->
+  <ion-grid *ngIf="selectedCategoria && productos.length > 0">
+    <ion-row *ngIf="productos.length > 0">
+      <ion-col size="12">
+        <h2>Productos de {{ selectedCategoria?.nombre }}</h2>
+      </ion-col>
+      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let producto of productos">
+        <ion-card class="product-card">
+          <div class="image-container">
+            <img [src]="producto.imagen" *ngIf="producto.imagen" alt="{{ producto.nombre }}">
+          </div>
+          <ion-card-header>
+            <ion-card-title>{{ producto.nombre }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+           <p><strong>Codigo:</strong> {{ producto.codigo }}</p>
+            <p *ngIf="isLoggedIn"><strong>Precio Final:</strong> {{ producto.precioFinal }}</p>
+            <p><strong>Marca:</strong> {{ producto.marca.nombre }}</p>
+            <ion-button expand="full" color="primary" (click)="navigateToDetail(producto)" style="color:white">Detalles</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

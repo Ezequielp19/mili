@@ -1,0 +1,35 @@
+ion-card {
+  margin: 20px auto; /* Centra la tarjeta horizontalmente */
+  max-width: 400px; /* Limita el ancho máximo */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+ion-card-header {
+  background-color: #5b7daf; /* Color de fondo del encabezado */
+  padding: 20px;
+}
+
+ion-card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+ion-item {
+  margin-bottom: 10px;
+}
+
+.login-button {
+  margin-top: 20px;
+  background-color: var(--ion-color-primary);
+  color: white;
+  text-transform: uppercase;
+}
+
+.register-link {
+  margin-top: 15px;
+
+  a {
+    color: var(--ion-color-primary);
+    text-decoration: none;
+  }
+}

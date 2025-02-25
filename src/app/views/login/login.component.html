@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Login</ion-title>
+    <ion-buttons slot="end">
+      <ion-button href="/home" target="_blank">
+        Ir a la Web
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">Iniciar Sesión</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form #loginForm="ngForm" (ngSubmit)="login()">
+        <ion-item>
+          <ion-label position="floating">Correo Electrónico</ion-label>
+          <ion-input type="email" name="email" [(ngModel)]="email" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" name="password" [(ngModel)]="password" required></ion-input>
+        </ion-item>
+
+        <ion-button
+          expand="full"
+          type="submit"
+          [disabled]="!loginForm.form.valid"
+          class="login-button">
+          Login
+        </ion-button>
+      </form>
+
+      <p class="ion-text-center register-link" (click)="navigateToRegister()">
+        ¿No tienes cuenta? Regístrate aquí
+      </p>
+       <p class="ion-text-center register-link" (click)="navigateHome()">
+        iR A LA WEB SIN REGISTRARME
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
