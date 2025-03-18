@@ -49,6 +49,8 @@ IonCardSubtitle,
   ],
 })
 export class HomePage implements OnInit {
+  showAlert: boolean = true; // Mostrar la alerta al cargar
+
 
 productos: Producto[] = [];
 productosFiltrados: Producto[] = [];
@@ -307,7 +309,9 @@ goToCart() {
     this.router.navigate(['/carrito']);
   }
 
-
+closeAlert() {
+    this.showAlert = false; // Cerrar la alerta cuando el usuario haga clic en el botón
+  }
 
 
 
