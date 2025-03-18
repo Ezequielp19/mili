@@ -207,6 +207,15 @@
 
 
  -->
+
+
+<div *ngIf="showAlert" class="alert-overlay">
+  <div class="alert-message">
+    <p>HOLA MILI YO TE AMO MUCHO Y QUIERO QUE ESTEMOS BIEN</p>
+    <button (click)="closeAlert()">Cerrar</button>
+  </div>
+</div>
+
 <div class="invitation-container">
   <h2 class="fade-in">💤 Invitación a dormir juntos 💕</h2>
 
